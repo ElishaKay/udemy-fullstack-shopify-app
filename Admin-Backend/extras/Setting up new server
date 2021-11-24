@@ -1,0 +1,33 @@
+Setting up new server
+
+
+1) Install nodejs
+curl -sL https://deb.nodesource.com/setup_10.x -o nodesource_setup.sh
+sudo bash nodesource_setup.sh
+sudo apt install nodejs
+
+2) Setup nginx
+sudo apt-get install nginx
+cd /etc/nginx/sites-available
+sudo vim default
+
+
+3) Nameservers to insert in NameCheap Domains
+
+anna.ns.cloudflare.com
+odin.ns.cloudflare.com
+
+On Cloudflare, you will handle the DNS.
+Step 1: Create an "A" record for the domain pointing to the IP from Digital Ocean
+Type: A
+Name: @
+Content: 67.205.136.120 (Custom IP)
+
+Step 2: Create a "CNAME" record
+Type: CNAME
+Name: www
+Content: amazonfashion.app (Domain Name)
+
+
+
+nodejs -v
